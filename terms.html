@@ -7,18 +7,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <title>Drillers - Contact Us</title>
+    <title>Terms of Service - Drillers</title>
     <style>
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-      }
-
-      html,
-      body {
-        height: 100%;
-        overflow: hidden;
       }
 
       @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap");
@@ -44,9 +38,8 @@
           );
         background-attachment: fixed;
         color: #ffffff;
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
+        line-height: 1.6;
+        min-height: 100vh;
         letter-spacing: 0.5px;
         position: relative;
       }
@@ -184,36 +177,33 @@
         }
       }
 
-      .main-content {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 120px 2rem 2rem 2rem;
         position: relative;
-        padding: 2rem;
         z-index: 1;
       }
 
-      .main-content::before {
+      .container::before {
         content: "";
         position: absolute;
-        top: 50%;
+        top: 0;
         left: 50%;
         width: 200%;
         height: 200%;
         background: radial-gradient(
           circle,
-          rgba(255, 215, 0, 0.05) 0%,
+          rgba(255, 215, 0, 0.03) 0%,
           transparent 70%
         );
         transform: translate(-50%, -50%);
-        animation: breathe 4s ease-in-out infinite;
+        animation: breathe 6s ease-in-out infinite;
+        z-index: -1;
       }
 
       .geometric-bg {
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
@@ -239,6 +229,7 @@
             transparent 60%
           );
         animation: pulse 8s ease-in-out infinite;
+        z-index: 0;
       }
 
       .geometric-bg::before {
@@ -263,142 +254,15 @@
         animation: rotate 30s linear infinite;
       }
 
-      .contact-header {
-        margin-bottom: 3rem;
-        position: relative;
-        z-index: 2;
-      }
-
-      h1 {
-        font-family: "Orbitron", monospace;
-        font-size: 3.5rem;
-        font-weight: 900;
-        margin-bottom: 1rem;
-        background: linear-gradient(
-          45deg,
-          #ffd700,
-          #ffa500,
-          #ffd700,
-          #ff6b35,
-          #ffd700
-        );
-        background-size: 300% 300%;
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: gradientShift 3s ease-in-out infinite,
-          textGlow 2s ease-in-out infinite alternate;
-        z-index: 2;
-        position: relative;
-        letter-spacing: 6px;
-        text-transform: uppercase;
-        filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.4));
-      }
-
-      .contact-subtitle {
-        font-family: "Rajdhani", sans-serif;
-        font-size: 1.3rem;
-        font-weight: 300;
-        color: #cccccc;
-        animation: fadeInUp 1s ease-out 0.5s both;
-        z-index: 2;
-        position: relative;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        margin-bottom: 2rem;
-      }
-
-      .contact-info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-        z-index: 2;
-        position: relative;
-        animation: fadeInUp 1s ease-out 1s both;
-      }
-
-      .email-container {
-        background: rgba(255, 215, 0, 0.05);
-        border: 2px solid rgba(255, 215, 0, 0.3);
-        border-radius: 15px;
-        padding: 2rem 3rem;
-        backdrop-filter: blur(10px);
-        position: relative;
-        overflow: hidden;
-        transition: all 0.3s ease;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3),
-          0 0 50px rgba(255, 215, 0, 0.1);
-      }
-
-      .email-container::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 215, 0, 0.1),
-          transparent
-        );
-        transition: left 0.8s ease;
-      }
-
-      .email-container:hover {
-        transform: translateY(-5px);
-        border-color: rgba(255, 215, 0, 0.6);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
-          0 0 80px rgba(255, 215, 0, 0.2);
-      }
-
-      .email-container:hover::before {
-        left: 100%;
-      }
-
-      .email-label {
-        font-family: "Orbitron", monospace;
-        font-size: 1rem;
-        color: #ffd700;
-        margin-bottom: 0.5rem;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-      }
-
-      .email-address {
-        font-family: "Rajdhani", sans-serif;
-        font-size: 1.8rem;
-        color: #ffffff;
-        font-weight: 500;
-        letter-spacing: 1px;
-        position: relative;
-        z-index: 2;
-      }
-
-      .email-link {
-        color: inherit;
-        text-decoration: none;
-        transition: color 0.3s ease;
-      }
-
-      .email-link:hover {
-        color: #ffd700;
-      }
-
-      .contact-social {
-        display: flex;
-        gap: 1.5rem;
-        margin-top: 1rem;
-      }
-
-      .contact-social-button {
+      .floating-back-button {
+        position: fixed;
+        top: 2rem;
+        left: 2rem;
         width: 60px;
         height: 60px;
         background: rgba(255, 215, 0, 0.1);
         border: 2px solid rgba(255, 215, 0, 0.3);
-        border-radius: 15px;
+        border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -407,11 +271,14 @@
         transition: all 0.3s ease;
         backdrop-filter: blur(10px);
         font-size: 1.5rem;
-        position: relative;
+        z-index: 1000;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3),
+          0 0 30px rgba(255, 215, 0, 0.1);
+        cursor: pointer;
         overflow: hidden;
       }
 
-      .contact-social-button::before {
+      .floating-back-button::before {
         content: "";
         position: absolute;
         top: 0;
@@ -427,31 +294,157 @@
         transition: left 0.5s ease;
       }
 
-      .contact-social-button:hover::before {
+      .floating-back-button:hover::before {
         left: 100%;
       }
 
-      .contact-social-button:hover {
+      .floating-back-button:hover {
         background: #ffd700;
         color: #000;
-        transform: translateY(-3px) scale(1.05);
-        box-shadow: 0 15px 30px rgba(255, 215, 0, 0.4),
-          0 0 25px rgba(255, 215, 0, 0.6);
+        transform: translateY(-3px) scale(1.1);
+        box-shadow: 0 15px 35px rgba(255, 215, 0, 0.4),
+          0 0 40px rgba(255, 215, 0, 0.6);
         border-color: #ffd700;
       }
 
-      .contact-social-button i {
-        color: inherit;
-        transition: color 0.3s ease;
+      .floating-back-button i {
+        transition: all 0.3s ease;
         z-index: 2;
         position: relative;
       }
 
-      .particles {
+      .floating-back-button:hover i {
+        color: #000;
+        transform: translateX(-2px);
+      }
+
+      h1 {
+        font-family: "Orbitron", monospace;
+        font-size: 3.5rem;
+        font-weight: 900;
+        margin-bottom: 1rem;
+        text-align: center;
+        background: linear-gradient(
+          45deg,
+          #ffd700,
+          #ffa500,
+          #ffd700,
+          #ff6b35,
+          #ffd700
+        );
+        background-size: 300% 300%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradientShift 3s ease-in-out infinite,
+          textGlow 2s ease-in-out infinite alternate;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.4));
+      }
+
+      .lead {
+        text-align: center;
+        font-size: 1.2rem;
+        color: #cccccc;
+        margin-bottom: 3rem;
+        font-weight: 300;
+        letter-spacing: 1px;
+        animation: fadeInUp 1s ease-out 0.5s both;
+      }
+
+      h2 {
+        font-family: "Orbitron", monospace;
+        font-size: 1.8rem;
+        color: #ffd700;
+        margin: 3rem 0 1.5rem 0;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+        position: relative;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+
+      h2::before {
+        content: "";
         position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background: #ffd700;
+        transition: width 0.3s ease;
+      }
+
+      h2:hover::before {
+        width: 100%;
+      }
+
+      p {
+        margin-bottom: 1.5rem;
+        color: #cccccc;
+        font-size: 1.1rem;
+        animation: fadeInUp 1s ease-out 1s both;
+      }
+
+      .lead {
+        margin-top: 0;
+      }
+
+      ul {
+        margin: 1.5rem 0 1.5rem 2rem;
+        color: #cccccc;
+        animation: fadeInUp 1s ease-out 1.2s both;
+      }
+
+      li {
+        margin-bottom: 0.8rem;
+        font-size: 1.05rem;
+        position: relative;
+      }
+
+      li::marker {
+        color: #ffd700;
+      }
+
+      strong {
+        color: #ffd700;
+        font-weight: 600;
+      }
+
+      a {
+        color: #ffa500;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      a::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background: #ffd700;
+        transition: width 0.3s ease;
+      }
+
+      a:hover {
+        color: #ffd700;
+      }
+
+      a:hover::after {
+        width: 100%;
+      }
+
+      .particles {
+        position: fixed;
         width: 100%;
         height: 100%;
         overflow: hidden;
+        z-index: 0;
       }
 
       .particle {
@@ -525,10 +518,9 @@
           );
         border-top: 1px solid rgba(255, 215, 0, 0.2);
         padding: 1rem 0;
-        margin-top: auto;
+        margin-top: 4rem;
         position: relative;
         backdrop-filter: blur(5px);
-        flex-shrink: 0;
         z-index: 100;
       }
 
@@ -655,68 +647,21 @@
         color: #000;
       }
 
-      .floating-back-button {
-        position: fixed;
-        top: 2rem;
-        left: 2rem;
-        width: 60px;
-        height: 60px;
-        background: rgba(255, 215, 0, 0.1);
-        border: 2px solid rgba(255, 215, 0, 0.3);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #ffd700;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        backdrop-filter: blur(10px);
-        font-size: 1.5rem;
-        z-index: 1000;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3),
-          0 0 30px rgba(255, 215, 0, 0.1);
-        cursor: pointer;
-        overflow: hidden;
+      footer.document-footer {
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 215, 0, 0.2);
+        text-align: center;
+        color: #888;
+        font-size: 0.9rem;
+        background: none;
+        backdrop-filter: none;
+        position: static;
       }
 
-      .floating-back-button::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 215, 0, 0.2),
-          transparent
-        );
-        transition: left 0.5s ease;
-      }
-
-      .floating-back-button:hover::before {
-        left: 100%;
-      }
-
-      .floating-back-button:hover {
-        background: #ffd700;
-        color: #000;
-        transform: translateY(-3px) scale(1.1);
-        box-shadow: 0 15px 35px rgba(255, 215, 0, 0.4),
-          0 0 40px rgba(255, 215, 0, 0.6);
-        border-color: #ffd700;
-      }
-
-      .floating-back-button i {
-        transition: all 0.3s ease;
-        z-index: 2;
-        position: relative;
-      }
-
-      .floating-back-button:hover i {
-        color: #000;
-        transform: translateX(-2px);
+      footer.document-footer p {
+        color: #888;
+        margin: 0;
       }
 
       @media (max-width: 768px) {
@@ -727,37 +672,19 @@
           top: 1.5rem;
           left: 1.5rem;
         }
-        .main-content {
-          padding: 1rem;
+
+        .container {
+          padding: 100px 1rem 2rem 1rem;
         }
 
         h1 {
           font-size: 2.5rem;
-          letter-spacing: 3px;
+          letter-spacing: 2px;
         }
 
-        .contact-subtitle {
-          font-size: 1.1rem;
-          padding: 0 1rem;
-        }
-
-        .email-container {
-          padding: 1.5rem 2rem;
-          margin: 0 1rem;
-        }
-
-        .email-address {
+        h2 {
           font-size: 1.4rem;
-        }
-
-        .contact-social {
-          gap: 1rem;
-        }
-
-        .contact-social-button {
-          width: 50px;
-          height: 50px;
-          font-size: 1.2rem;
+          letter-spacing: 1px;
         }
 
         .footer-content {
@@ -778,107 +705,193 @@
       @media (max-width: 480px) {
         h1 {
           font-size: 2rem;
-          letter-spacing: 2px;
+          letter-spacing: 1px;
         }
 
-        .contact-subtitle {
-          font-size: 1rem;
+        .container {
+          padding: 90px 0.5rem 2rem 0.5rem;
         }
 
-        .email-container {
-          padding: 1rem 1.5rem;
-          margin: 0 0.5rem;
-        }
-
-        .email-address {
+        h2 {
           font-size: 1.2rem;
         }
 
-        .main-content {
-          padding: 0.5rem;
+        p,
+        li {
+          font-size: 1rem;
         }
 
         .footer-content {
           padding: 0 1rem;
         }
-
-        .contact-social {
-          gap: 0.8rem;
-        }
-
-        .contact-social-button {
-          width: 45px;
-          height: 45px;
-          font-size: 1.1rem;
-        }
       }
     </style>
   </head>
   <body>
+    <div class="geometric-bg"></div>
+
+    <div class="particles">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
+
     <a href="index.html" class="floating-back-button" title="Back to Home">
       <i class="fas fa-arrow-left"></i>
     </a>
 
-    <div class="main-content">
-      <div class="geometric-bg"></div>
+    <main class="container">
+      <h1>Terms of Service</h1>
+      <p class="lead">Effective date: <strong>January 2025</strong></p>
 
-      <div class="particles">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-      </div>
+      <p>
+        Welcome to <strong>Drillers</strong> ("we," "our," or "us"). By
+        downloading, accessing, or using our mobile application (the "App"), you
+        agree to be bound by these Terms of Service ("Terms"). If you do not
+        agree to these Terms, do not use the App.
+      </p>
 
-      <div class="contact-header">
-        <h1>CONTACT US</h1>
-        <p class="contact-subtitle">Get in Touch with us</p>
-      </div>
+      <h2>1. Use of the App</h2>
+      <ul>
+        <li>You must be at least 13 years old to use the App.</li>
+        <li>
+          You may use the App only for lawful purposes and in accordance with
+          these Terms.
+        </li>
+        <li>
+          You are responsible for ensuring that your use of the App complies
+          with all applicable laws and regulations.
+        </li>
+      </ul>
 
-      <div class="contact-info">
-        <div class="email-container">
-          <div class="email-label">Email</div>
-          <div class="email-address">
-            <a href="mailto:hailey@drillers.app" class="email-link"
-              >hailey@drillers.app</a
-            >
-          </div>
-        </div>
+      <h2>2. Accounts</h2>
+      <ul>
+        <li>
+          If the App requires an account, you must provide accurate, current,
+          and complete information.
+        </li>
+        <li>
+          You are responsible for maintaining the confidentiality of your login
+          credentials and for all activities under your account.
+        </li>
+        <li>
+          You must notify us immediately if you suspect any unauthorized use of
+          your account.
+        </li>
+      </ul>
 
-        <div class="contact-social">
-          <a
-            href="https://www.instagram.com"
-            class="contact-social-button"
-            title="Instagram"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a
-            href="https://www.twitter.com"
-            class="contact-social-button"
-            title="X (Twitter)"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a
-            href="https://www.tiktok.com"
-            class="contact-social-button"
-            title="TikTok"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="fab fa-tiktok"></i>
-          </a>
-        </div>
-      </div>
-    </div>
+      <h2>3. Subscription & Payments</h2>
+      <p>If the App offers paid features or subscriptions:</p>
+      <ul>
+        <li>All purchases are final unless required by law.</li>
+        <li>
+          Subscriptions automatically renew unless canceled at least 24 hours
+          before the end of the billing period.
+        </li>
+        <li>
+          You can manage or cancel subscriptions through your device's app store
+          account settings.
+        </li>
+      </ul>
+
+      <h2>4. User Content</h2>
+      <ul>
+        <li>
+          You may be able to submit, upload, or store content in the App ("User
+          Content").
+        </li>
+        <li>
+          You retain ownership of your User Content, but grant us a
+          non-exclusive, worldwide, royalty-free license to use it as necessary
+          to operate the App.
+        </li>
+        <li>
+          You agree not to upload any content that is unlawful, harmful, or
+          infringes on others' rights.
+        </li>
+      </ul>
+
+      <h2>5. Intellectual Property</h2>
+      <p>
+        The App and all related content (excluding User Content) are owned by us
+        or our licensors and are protected by copyright, trademark, and other
+        intellectual property laws. You may not copy, modify, distribute, or
+        create derivative works from the App without our prior written consent.
+      </p>
+
+      <h2>6. Prohibited Conduct</h2>
+      <p>You agree not to:</p>
+      <ul>
+        <li>Use the App for any fraudulent or unlawful purpose.</li>
+        <li>
+          Interfere with or disrupt the operation of the App or its servers.
+        </li>
+        <li>Attempt to gain unauthorized access to the App or its data.</li>
+      </ul>
+
+      <h2>7. Disclaimer of Warranties</h2>
+      <p>
+        The App is provided on an "AS IS" and "AS AVAILABLE" basis. We disclaim
+        all warranties, express or implied, including warranties of
+        merchantability, fitness for a particular purpose, and non-infringement.
+        We do not guarantee that the App will be uninterrupted, error-free, or
+        free of harmful components.
+      </p>
+
+      <h2>8. Limitation of Liability</h2>
+      <p>
+        To the maximum extent permitted by law, we are not liable for any
+        indirect, incidental, special, consequential, or punitive damages, or
+        for any loss of profits or revenues, whether incurred directly or
+        indirectly, resulting from your use of the App.
+      </p>
+
+      <h2>9. Indemnification</h2>
+      <p>
+        You agree to indemnify and hold harmless Drillers, its affiliates,
+        officers, agents, and employees from any claims, damages, liabilities,
+        and expenses arising out of your use of the App or violation of these
+        Terms.
+      </p>
+
+      <h2>10. Termination</h2>
+      <p>
+        We may suspend or terminate your access to the App at any time, with or
+        without notice, for conduct that violates these Terms or is otherwise
+        harmful to other users or us.
+      </p>
+
+      <h2>11. Changes to These Terms</h2>
+      <p>
+        We may update these Terms from time to time. We will post the updated
+        Terms in the App and update the Effective Date above. Your continued use
+        of the App after changes means you accept the updated Terms.
+      </p>
+
+      <h2>12. Governing Law</h2>
+      <p>
+        These Terms are governed by and construed in accordance with the laws of
+        California, United States, without regard to its conflict of laws
+        principles.
+      </p>
+
+      <h2>13. Contact Us</h2>
+      <p>If you have questions about these Terms, contact us at:</p>
+      <p>
+        <strong>Email:</strong>
+        <a href="mailto:hailey@drillers.app">hailey@drillers.app</a><br />
+        <strong>Address:</strong> Available upon request
+      </p>
+
+      <footer class="document-footer">
+        <p><strong>Last updated: January 2025</strong></p>
+      </footer>
+    </main>
 
     <footer class="footer">
       <div class="footer-content">
@@ -937,8 +950,7 @@
           (elementUnderCursor.tagName === "A" ||
             elementUnderCursor.closest("a") ||
             elementUnderCursor.classList.contains("social-button") ||
-            elementUnderCursor.classList.contains("footer-link") ||
-            elementUnderCursor.classList.contains("contact-social-button"));
+            elementUnderCursor.classList.contains("footer-link"));
 
         if (!isClickable && Math.random() > 0.95) {
           createSparkle(e.clientX, e.clientY);
